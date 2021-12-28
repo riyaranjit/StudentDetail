@@ -41,7 +41,7 @@ class _StudentDetailState extends State<StudentDetail> {
                 Container(
                   width: 500,
                   height: 600,
-                  decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid,color: Colors.black12)),
+                  decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid)),
                   child: Column(children: [
                     Text('Student')
 

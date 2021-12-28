@@ -16,7 +16,7 @@ class _StudentDetailState extends State<StudentDetail> {
         centerTitle: true,
         backgroundColor: Color(0xff3742fa),
         actions: <Widget>[
-          Image.asset('images/card.png',fit: BoxFit.contain,height: 20,width: 40,), 
+          Image.asset('images/id-card.png',fit: BoxFit.contain,height: 20,width: 40,), 
           Container(padding: const EdgeInsets.all(8.0),
            child: Text('ID Card'),
            margin: EdgeInsets.only(top: 15),),
@@ -28,7 +28,7 @@ class _StudentDetailState extends State<StudentDetail> {
         body: SafeArea(child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top),
               child: Row(children: [
               Text('Student Information'),
               SizedBox(width:20),
@@ -41,7 +41,7 @@ class _StudentDetailState extends State<StudentDetail> {
                 Container(
                   width: 500,
                   height: 600,
-                  decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid,color: Colors.black12)),
+                  decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid)),
                   child: Column(children: [
                     Text('Student')
 

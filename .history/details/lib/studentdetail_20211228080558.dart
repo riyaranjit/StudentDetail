@@ -16,7 +16,7 @@ class _StudentDetailState extends State<StudentDetail> {
         centerTitle: true,
         backgroundColor: Color(0xff3742fa),
         actions: <Widget>[
-          Image.asset('images/card.png',fit: BoxFit.contain,height: 20,width: 40,), 
+          Image.asset('images/idcard.png',fit: BoxFit.contain,height: 20,width: 40,), 
           Container(padding: const EdgeInsets.all(8.0),
            child: Text('ID Card'),
            margin: EdgeInsets.only(top: 15),),
