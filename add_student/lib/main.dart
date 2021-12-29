@@ -11,7 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false, home: StudentDetail());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: PdfViewer());
   }
 }

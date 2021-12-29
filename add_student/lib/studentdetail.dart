@@ -23,13 +23,19 @@ class _StudentDetailState extends State<StudentDetail> {
   }
 
   final nationality = ["Nepalese", "Chinese", "American", "Indian"];
-  String? value;
+  String? nvalue;
+
+  final gender = ["M", "F"];
+  String? gvalue;
 
   final discount = ["No Discount", "5 %", "10 %", "15 %"];
   String? dvalue;
 
   final category = ["Student", "Teacher"];
   String? cvalue;
+
+  static const int numItems = 1;
+  List<bool> selected = List<bool>.generate(numItems, (int index) => false);
 
   @override
   Widget build(BuildContext context) {
@@ -161,12 +167,12 @@ class _StudentDetailState extends State<StudentDetail> {
                                   //         Border.all(color: Colors.black45)),
                                   child: DropdownButtonHideUnderline(
                                     child: DropdownButton(
-                                        value: value,
+                                        value: nvalue,
                                         items: nationality
                                             .map(buildMenuItem)
                                             .toList(),
                                         onChanged: (value) => setState(() {
-                                              this.value = value as String?;
+                                              this.nvalue = value as String?;
                                             })),
                                   ),
                                 ),
@@ -186,12 +192,11 @@ class _StudentDetailState extends State<StudentDetail> {
                                   color: Colors.brown[50],
                                   child: DropdownButtonHideUnderline(
                                     child: DropdownButton(
-                                        value: value,
-                                        items: nationality
-                                            .map(buildMenuItem)
-                                            .toList(),
+                                        value: gvalue,
+                                        items:
+                                            gender.map(buildMenuItem).toList(),
                                         onChanged: (value) => setState(() {
-                                              this.value = value as String?;
+                                              this.gvalue = value as String?;
                                             })),
                                   ),
                                 ),
@@ -265,34 +270,139 @@ class _StudentDetailState extends State<StudentDetail> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('02: Choose at least 1 batch'),
+                        const Text('02: Choose at least 1 batch'),
                         Container(
                           width: double.infinity,
-                          height: 160,
+                          height: 140,
                           decoration: BoxDecoration(
                               border: Border.all(
                                   style: BorderStyle.solid,
                                   color: Colors.black26)),
+                          child: DataTable(
+                            columns: const <DataColumn>[
+                              DataColumn(
+                                label: Text(
+                                  'Id',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              DataColumn(
+                                label: Text(
+                                  'Batch Name',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ],
+                            rows: List<DataRow>.generate(
+                              numItems,
+                              (int index) => DataRow(
+                                color:
+                                    MaterialStateProperty.resolveWith<Color?>(
+                                        (Set<MaterialState> states) {
+                                  // All rows will have the same selected color.
+                                  if (states.contains(MaterialState.selected)) {
+                                    return Theme.of(context)
+                                        .colorScheme
+                                        .primary
+                                        .withOpacity(0.08);
+                                  }
+                                }),
+                                cells: <DataCell>[
+                                  DataCell(Text('$index')),
+                                  const DataCell(Text('Computer Basic Batch'))
+                                ],
+                                selected: selected[index],
+                                onSelectChanged: (bool? value) {
+                                  setState(() {
+                                    selected[index] = value!;
+                                  });
+                                },
+                              ),
+                            ),
+                          ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
-                        Text('03: Choose at least 1 pckage'),
+                        const Text('03: Choose at least 1 package'),
                         Container(
                           width: double.infinity,
-                          height: 160,
+                          height: 140,
                           decoration: BoxDecoration(
                               border: Border.all(
                                   style: BorderStyle.solid,
                                   color: Colors.black26)),
+                          child: SingleChildScrollView(
+                            child: DataTable(
+                              columns: const <DataColumn>[
+                                DataColumn(
+                                  label: Text(
+                                    'Id',
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                DataColumn(
+                                  label: Text(
+                                    'Package Name',
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                DataColumn(
+                                  label: Text(
+                                    'Amount',
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ],
+                              rows: List<DataRow>.generate(
+                                numItems,
+                                (int index) => DataRow(
+                                  color:
+                                      MaterialStateProperty.resolveWith<Color?>(
+                                          (Set<MaterialState> states) {
+                                    // All rows will have the same selected color.
+                                    if (states
+                                        .contains(MaterialState.selected)) {
+                                      return Theme.of(context)
+                                          .colorScheme
+                                          .primary
+                                          .withOpacity(0.08);
+                                    }
+                                  }),
+                                  cells: <DataCell>[
+                                    DataCell(Text('$index')),
+                                    const DataCell(
+                                        Text('Computer Basic Batch')),
+                                    const DataCell(Text('4000'))
+                                  ],
+                                  selected: selected[index],
+                                  onSelectChanged: (bool? value) {
+                                    setState(() {
+                                      selected[index] = value!;
+                                    });
+                                  },
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         const Text('04: Amount Information'),
                         Container(
                             width: double.infinity,
-                            height: 160,
+                            height: 200,
                             decoration: BoxDecoration(
                               border: Border.all(
                                   style: BorderStyle.solid,
@@ -305,24 +415,22 @@ class _StudentDetailState extends State<StudentDetail> {
                                   Row(
                                     children: [
                                       const Text("Subtotal:"),
-                                      const SizedBox(width: 80),
+                                      const SizedBox(width: 63),
                                       Flexible(
                                           child: Container(
                                               height: 30,
-                                              width: 260,
-                                              child: TextFormField(
-                                                validator: myvalidation,
-                                                cursorColor: Colors.red,
-                                                style: const TextStyle(
-                                                    fontSize: 12),
-                                                decoration:
-                                                    const InputDecoration(
+                                              width: 270,
+                                              child: const TextField(
+                                                style: TextStyle(fontSize: 12),
+                                                decoration: InputDecoration(
+                                                  hintText: "0",
                                                   border: OutlineInputBorder(
                                                       borderSide: BorderSide()),
                                                 ),
                                               )))
                                     ],
                                   ),
+                                  const SizedBox(height: 5),
                                   Row(
                                     children: [
                                       Column(
@@ -330,46 +438,107 @@ class _StudentDetailState extends State<StudentDetail> {
                                           Text("Discount %"),
                                         ],
                                       ),
-                                      // Column(
-                                      //   children: [
-                                      //     Container(
-                                      //       width: 100,
-                                      //       decoration: BoxDecoration(
-                                      //           border: Border.all(
-                                      //               color: Colors.black45)),
-                                      //       child: DropdownButtonHideUnderline(
-                                      //         child: DropdownButton(
-                                      //             value: dvalue,
-                                      //             items: discount
-                                      //                 .map(buildMenuItem)
-                                      //                 .toList(),
-                                      //             onChanged: (value) =>
-                                      //                 setState(() {
-                                      //                   this.dvalue =
-                                      //                       value as String?;
-                                      //                 })),
-                                      //       ),
-                                      //     )
-                                      //   ],
-                                      // )
-                                      Container(
-                                        width: 200,
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.end,
-                                          children: [
-                                            TextField(
-                                              decoration: InputDecoration(
-                                                  border: OutlineInputBorder(),
-                                                  hintText: "0"),
-                                            )
-                                          ],
-                                        ),
-                                      )
+                                      SizedBox(width: 50),
+                                      Column(
+                                        children: [
+                                          Container(
+                                            width: 120,
+                                            height: 30,
+                                            color: Colors.brown[50],
+                                            child: DropdownButtonHideUnderline(
+                                              child: DropdownButton(
+                                                  value: dvalue,
+                                                  items: discount
+                                                      .map(buildMenuItem)
+                                                      .toList(),
+                                                  onChanged: (value) =>
+                                                      setState(() {
+                                                        this.dvalue =
+                                                            value as String?;
+                                                      })),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        width: 30,
+                                      ),
+                                      Column(
+                                        children: [
+                                          Container(
+                                              width: 120,
+                                              height: 30,
+                                              color: Colors.brown[50],
+                                              child: TextFormField(
+                                                style: const TextStyle(
+                                                    fontSize: 12),
+                                                decoration:
+                                                    const InputDecoration(
+                                                  border: OutlineInputBorder(
+                                                      borderSide: BorderSide()),
+                                                ),
+                                              ))
+                                        ],
+                                      ),
                                     ],
                                   ),
-                                  Row(),
-                                  Row()
+                                  const SizedBox(height: 5),
+                                  Row(
+                                    children: [
+                                      const Text("Total Amount:"),
+                                      const SizedBox(width: 30),
+                                      Flexible(
+                                          child: Container(
+                                              height: 30,
+                                              width: 270,
+                                              child: const TextField(
+                                                style: TextStyle(fontSize: 12),
+                                                decoration: InputDecoration(
+                                                  hintText: "0",
+                                                  border: OutlineInputBorder(
+                                                      borderSide: BorderSide()),
+                                                ),
+                                              )))
+                                    ],
+                                  ),
+                                  const SizedBox(height: 5),
+                                  Row(
+                                    children: [
+                                      const Text("Paid Fee:"),
+                                      const SizedBox(width: 62),
+                                      Flexible(
+                                          child: Container(
+                                              height: 30,
+                                              width: 270,
+                                              child: const TextField(
+                                                style: TextStyle(fontSize: 12),
+                                                decoration: InputDecoration(
+                                                  hintText: "0",
+                                                  border: OutlineInputBorder(
+                                                      borderSide: BorderSide()),
+                                                ),
+                                              )))
+                                    ],
+                                  ),
+                                  const SizedBox(height: 5),
+                                  Row(
+                                    children: [
+                                      const Text("Advance Fee:"),
+                                      const SizedBox(width: 35),
+                                      Flexible(
+                                          child: Container(
+                                              height: 30,
+                                              width: 270,
+                                              child: const TextField(
+                                                style: TextStyle(fontSize: 12),
+                                                decoration: InputDecoration(
+                                                  hintText: "0",
+                                                  border: OutlineInputBorder(
+                                                      borderSide: BorderSide()),
+                                                ),
+                                              )))
+                                    ],
+                                  ),
                                 ],
                               ),
                             )),
@@ -433,5 +602,5 @@ class _StudentDetailState extends State<StudentDetail> {
   }
 }
 
-DropdownMenuItem<String> buildMenuItem(String item) =>
-    DropdownMenuItem(value: item, child: Text(item, style: TextStyle()));
+DropdownMenuItem<String> buildMenuItem(String item) => DropdownMenuItem(
+    value: item, child: Text(item, style: TextStyle(fontSize: 12)));
