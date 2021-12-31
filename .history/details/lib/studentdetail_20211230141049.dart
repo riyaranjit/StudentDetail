@@ -776,12 +776,12 @@ class _StudentDetailState extends State<StudentDetail> {
                       ],)
                     ],),
                     ),
-                    SizedBox(height: 20,),
-                    Text('Important Notes:',style:TextStyle(
+                    SizedBox(height: 30,),
+                    Text('Important Notes',style:TextStyle(
                       color:Colors.blue,
-                      fontSize: 20,
+                      fontSize: 20
                     )),
-                    SizedBox(height: 8,),
+                    SizedBox(height: 10,),
                     Container(
                       width: 300,
                       height: 300,

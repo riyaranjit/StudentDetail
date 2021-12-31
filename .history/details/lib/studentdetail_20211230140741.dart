@@ -776,12 +776,7 @@ class _StudentDetailState extends State<StudentDetail> {
                       ],)
                     ],),
                     ),
-                    SizedBox(height: 20,),
-                    Text('Important Notes:',style:TextStyle(
-                      color:Colors.blue,
-                      fontSize: 20,
-                    )),
-                    SizedBox(height: 8,),
+                    SizedBox(height: 50,),
                     Container(
                       width: 300,
                       height: 300,
@@ -795,7 +790,7 @@ class _StudentDetailState extends State<StudentDetail> {
                               //height: 10,
                               ),
                         decoration: InputDecoration(
-                              border: OutlineInputBorder(),
+                              border: OutlineInputBorder()
                               hintText: "N/A",
                               ),
 

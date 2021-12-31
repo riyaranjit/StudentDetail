@@ -559,7 +559,7 @@ class _StudentDetailState extends State<StudentDetail> {
                   Text('04: Amount Information'),
                   Container(
                   width: double.infinity,
-                  height: 210,
+                  height: 200,
                   decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid,color:Colors.black26)),
                   child: Padding(
                     padding: const EdgeInsets.only(left:10),
@@ -709,7 +709,7 @@ class _StudentDetailState extends State<StudentDetail> {
                             Flexible(
                             child: Container(
                               width: 200,
-                              height: 30,
+                              height: 20,
                               child: TextField(
                                 cursorColor: Colors.red,
                                 style: TextStyle(
@@ -776,31 +776,6 @@ class _StudentDetailState extends State<StudentDetail> {
                       ],)
                     ],),
                     ),
-                    SizedBox(height: 20,),
-                    Text('Important Notes:',style:TextStyle(
-                      color:Colors.blue,
-                      fontSize: 20,
-                    )),
-                    SizedBox(height: 8,),
-                    Container(
-                      width: 300,
-                      height: 300,
-                      //color:Colors.red,
-                      child: TextField(
-                        maxLines:30,
-                        cursorColor: Colors.red,
-                        style: TextStyle(
-                              //fontSize: 50,
-                              fontWeight:FontWeight.bold,
-                              //height: 10,
-                              ),
-                        decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              hintText: "N/A",
-                              ),
-
-                      ),
-                    )
 
                 ],
                 ),

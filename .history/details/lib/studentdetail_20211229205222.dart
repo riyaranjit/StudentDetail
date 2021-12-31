@@ -29,11 +29,6 @@ class _StudentDetailState extends State<StudentDetail> {
 
   final category = ["Student", "Teacher"];
   String? cvalue;
-  final marriage = ["Yes", "No"];
-  String? mvalue;
-
-  static const int numItems = 1;
-  List<bool> selected = List<bool>.generate(numItems, (int index) => false);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +80,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           Flexible(
                           child: Container(
                             width: 200,
-                            height: 30,
+                            height: 20,
                             child: TextField(
                               cursorColor: Colors.red,
                               style: TextStyle(
@@ -101,7 +96,7 @@ class _StudentDetailState extends State<StudentDetail> {
 
 
                       ],),
-                      SizedBox(height: 10,),
+                      SizedBox(height: 15,),
                       Row(children: [
                         Text('Full Name :',style:TextStyle(
                           color:Colors.blue,
@@ -110,7 +105,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           Flexible(
                           child: Container(
                             width: 350,
-                            height: 30,
+                            height: 20,
                             child: TextField(
                               cursorColor: Colors.red,
                               style: TextStyle(
@@ -126,7 +121,7 @@ class _StudentDetailState extends State<StudentDetail> {
 
 
                       ],),
-                      SizedBox(height:10),
+                      SizedBox(height:20),
                       Row(children: [
                         Text('Nationality:',style:TextStyle(
                           color:Colors.blue,
@@ -134,7 +129,7 @@ class _StudentDetailState extends State<StudentDetail> {
                         ),
                         SizedBox(width: 20,),
                         Container(
-                                  height: 30,
+                                  height: 20,
                                   width: 150,
                                   color: Colors.brown[50],
                                   // decoration: BoxDecoration(
@@ -155,7 +150,7 @@ class _StudentDetailState extends State<StudentDetail> {
                                 Text('Gender'),
                                 SizedBox(width: 20,),
                                 Container(
-                                  height: 30,
+                                  height: 20,
                                   width: 150,
                                   color: Colors.brown[50],
                                   child: DropdownButtonHideUnderline(
@@ -170,51 +165,20 @@ class _StudentDetailState extends State<StudentDetail> {
                                   ),
                                 ),
                       ],),
-                      SizedBox(height:10),
+                      SizedBox(height:20),
                       Row(children: [
                         Text('Birth Date:',style:TextStyle(
                           color:Colors.blue,
                         )),
-                        SizedBox(width: 20,),
-                        Flexible(
-                              child: Container(
-                                height: 30,
-                                width: 250,
-                                child: TextFormField(
-                                  validator: myvalidation,
-                                  cursorColor: Colors.red,
-                                  style: const TextStyle(fontSize: 12),
-                                  decoration: const InputDecoration(
-                                    border: OutlineInputBorder(
-                                        borderSide: BorderSide()),
-                                  ),
-                                ),
-                              ),
-                            )
+                        
                       ],),
-                      SizedBox(height:10),
+                      SizedBox(height:20),
                       Row(children: [
                         Text('Category:',style:TextStyle(
                           color:Colors.blue,
-                        )),
-                        SizedBox(width: 20,),
-                        Container(
-                                  height: 30,
-                                  width: 300,
-                                  color: Colors.brown[50],
-                                  child: DropdownButtonHideUnderline(
-                                    child: DropdownButton(
-                                        value: cvalue,
-                                        items: category
-                                            .map(buildMenuItem)
-                                            .toList(),
-                                        onChanged: (value) => setState(() {
-                                              this.cvalue = (value as String?);
-                                            })),
-                                  ),
-                                )
+                        ))
                       ],),
-                      SizedBox(height:10),
+                      SizedBox(height:20),
                       Row(children: [
                         Text('Phone No:',style:TextStyle(
                           color:Colors.blue,
@@ -223,7 +187,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           Flexible(
                           child: Container(
                             width: 350,
-                            height: 30,
+                            height: 20,
                             child: TextField(
                               cursorColor: Colors.red,
                               style: TextStyle(
@@ -237,54 +201,19 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                         ),
                       ],),
-                      SizedBox(height:10),
+                      SizedBox(height:20),
                       Row(children: [
                         Text('Is Married:',style:TextStyle(
                           color:Colors.blue,
-                        )),SizedBox(width: 20,),
-                        Container(
-                                  height: 30,
-                                  width: 150,
-                                  color: Colors.brown[50],
-                                  // decoration: BoxDecoration(
-                                  //     border:
-                                  //         Border.all(color: Colors.black45)),
-                                  child: DropdownButtonHideUnderline(
-                                    child: DropdownButton(
-                                        value: mvalue,
-                                        items:marriage.map(buildMenuItem).toList(),
-                                            
-                                            
-                                        onChanged: (value) => setState(() {
-                                              this.mvalue = value as String?;
-                                            })),
-                                  ),
-                                ),
+                        ))
                       ],),
-                      SizedBox(height:10),
+                      SizedBox(height:20),
                       Row(children: [
                         Text('Address:',style:TextStyle(
                           color:Colors.blue,
-                        )),
-                         SizedBox(width:20),
-                          Flexible(
-                          child: Container(
-                            width: 350,
-                            height: 30,
-                            child: TextField(
-                              cursorColor: Colors.red,
-                              style: TextStyle(
-                              fontSize: 15,
-                              fontWeight:FontWeight.bold,
-                              ),
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder()
-                              ),
-                            ),
-                          ),
-                        ),
+                        ))
                       ],),
-                      SizedBox(height:10),
+                      SizedBox(height:20),
                       Row(children: [
                         Text('Father Name:',style:TextStyle(
                           color:Colors.blue,
@@ -293,7 +222,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           Flexible(
                           child: Container(
                             width: 350,
-                            height: 30,
+                            height: 20,
                             child: TextField(
                               cursorColor: Colors.red,
                               style: TextStyle(
@@ -307,7 +236,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                         ),
                       ],),
-                      SizedBox(height:10),
+                      SizedBox(height:20),
                       Row(children: [
                         Text('Father Phone: ',style:TextStyle(
                           color:Colors.blue,
@@ -316,7 +245,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           Flexible(
                           child: Container(
                             width: 150,
-                            height: 30,
+                            height: 20,
                             child: TextField(
                               cursorColor: Colors.red,
                               style: TextStyle(
@@ -331,13 +260,13 @@ class _StudentDetailState extends State<StudentDetail> {
                         ),
 
                       ],),
-                      SizedBox(height:10),
+                      SizedBox(height:20),
                       Row(children: [
                         Text('Join Date:',style:TextStyle(
                           color:Colors.blue,
                         ))
                       ],),
-                      SizedBox(height:10),
+                      SizedBox(height:20),
                       Row(children: [
                         Text('Email ID:',style:TextStyle(
                           color:Colors.blue,
@@ -360,13 +289,13 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                         ),
                       ],),
-                      SizedBox(height:10),
+                      SizedBox(height:20),
                       Row(children: [
                         Text('Status:',style:TextStyle(
                           color:Colors.blue,
                         ))
                       ],),
-                      SizedBox(height:10),
+                      SizedBox(height:20),
                       Row(children: [
                         Text('Citizenship No:',style:TextStyle(
                           color:Colors.blue,
@@ -375,7 +304,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           Flexible(
                           child: Container(
                             width: 140,
-                            height: 30,
+                            height: 20,
                             child: TextField(
                               cursorColor: Colors.red,
                               style: TextStyle(
@@ -396,7 +325,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           Flexible(
                           child: Container(
                             width: 140,
-                            height: 30,
+                            height: 20,
                             child: TextField(
                               cursorColor: Colors.red,
                               style: TextStyle(
@@ -410,7 +339,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                         ),
                       ],),
-                      SizedBox(height:10),
+                      SizedBox(height:15),
                       Row(children: [
                         Text('Reference From:',style:TextStyle(
                           color:Colors.blue,
@@ -433,133 +362,22 @@ class _StudentDetailState extends State<StudentDetail> {
                   children: [
                   Text('02: Choose at least 1 batch'),
                   Container(
-                          width: double.infinity,
-                          height: 140,
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  style: BorderStyle.solid,
-                                  color: Colors.black26)),
-                          child: DataTable(
-                            columns: const <DataColumn>[
-                              DataColumn(
-                                label: Text(
-                                  'Id',
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              DataColumn(
-                                label: Text(
-                                  'Batch Name',
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ],
-                            rows: List<DataRow>.generate(
-                              numItems,
-                              (int index) => DataRow(
-                                color:
-                                    MaterialStateProperty.resolveWith<Color?>(
-                                        (Set<MaterialState> states) {
-                                  // All rows will have the same selected color.
-                                  if (states.contains(MaterialState.selected)) {
-                                    return Theme.of(context)
-                                        .colorScheme
-                                        .primary
-                                        .withOpacity(0.08);
-                                  }
-                                }),
-                                cells: <DataCell>[
-                                  DataCell(Text('$index')),
-                                  const DataCell(Text('Computer Basic Batch'))
-                                ],
-                                selected: selected[index],
-                                onSelectChanged: (bool? value) {
-                                  setState(() {
-                                    selected[index] = value!;
-                                  });
-                                },
-                              ),
-                            ),
-                          ),
-                        ),
+                  width: double.infinity,
+                  height: 160,
+                  decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid,color:Colors.black26)),
+                  ),
                   SizedBox(height: 20,),
                   Text('03: Choose at least 1 pckage'),
                   Container(
-                          width: double.infinity,
-                          height: 140,
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  style: BorderStyle.solid,
-                                  color: Colors.black26)),
-                          child: SingleChildScrollView(
-                            child: DataTable(
-                              columns: const <DataColumn>[
-                                DataColumn(
-                                  label: Text(
-                                    'Id',
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                DataColumn(
-                                  label: Text(
-                                    'Package Name',
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                DataColumn(
-                                  label: Text(
-                                    'Amount',
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ],
-                              rows: List<DataRow>.generate(
-                                numItems,
-                                (int index) => DataRow(
-                                  color:
-                                      MaterialStateProperty.resolveWith<Color?>(
-                                          (Set<MaterialState> states) {
-                                    // All rows will have the same selected color.
-                                    if (states
-                                        .contains(MaterialState.selected)) {
-                                      return Theme.of(context)
-                                          .colorScheme
-                                          .primary
-                                          .withOpacity(0.08);
-                                    }
-                                  }),
-                                  cells: <DataCell>[
-                                    DataCell(Text('$index')),
-                                    const DataCell(
-                                        Text('Computer Basic Batch')),
-                                    const DataCell(Text('4000'))
-                                  ],
-                                  selected: selected[index],
-                                  onSelectChanged: (bool? value) {
-                                    setState(() {
-                                      selected[index] = value!;
-                                    });
-                                  },
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
+                  width: double.infinity,
+                  height: 160,
+                  decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid,color:Colors.black26)),
+                  ),
                   SizedBox(height: 20,),
                   Text('04: Amount Information'),
                   Container(
                   width: double.infinity,
-                  height: 210,
+                  height: 170,
                   decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid,color:Colors.black26)),
                   child: Padding(
                     padding: const EdgeInsets.only(left:10),
@@ -572,7 +390,7 @@ class _StudentDetailState extends State<StudentDetail> {
                             Flexible(
                             child: Container(
                               width: 200,
-                              height: 30,
+                              height: 20,
                               child: TextField(
                                 cursorColor: Colors.red,
                                 style: TextStyle(
@@ -587,7 +405,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                      ],
                      ),
-                     SizedBox(height: 5,),
+                     SizedBox(height: 10,),
                      Row(children: [
                        Text('Discount % :',style:TextStyle(
                           color:Colors.blue,
@@ -596,7 +414,7 @@ class _StudentDetailState extends State<StudentDetail> {
                             Flexible(
                             child: Container(
                               width: 200,
-                              height: 30,
+                              height: 20,
                               child: TextField(
                                 cursorColor: Colors.red,
                                 style: TextStyle(
@@ -613,7 +431,7 @@ class _StudentDetailState extends State<StudentDetail> {
                             Flexible(
                             child: Container(
                               width: 180,
-                              height: 30,
+                              height: 20,
                               child: TextField(
                                 cursorColor: Colors.red,
                                 style: TextStyle(
@@ -628,7 +446,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                      ],
                      ),
-                     SizedBox(height: 5,),
+                     SizedBox(height: 10,),
                      Row(children: [
                        Text('Total amount :',style:TextStyle(
                           color:Colors.blue,
@@ -637,7 +455,7 @@ class _StudentDetailState extends State<StudentDetail> {
                             Flexible(
                             child: Container(
                               width: 200,
-                              height: 30,
+                              height: 20,
                               child: TextField(
                                 cursorColor: Colors.red,
                                 style: TextStyle(
@@ -652,7 +470,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                      ],
                      ),
-                     SizedBox(height: 5,),
+                     SizedBox(height: 10,),
                      Row(children: [
                        Text('Paid fee :',style:TextStyle(
                           color:Colors.blue,
@@ -661,7 +479,7 @@ class _StudentDetailState extends State<StudentDetail> {
                             Flexible(
                             child: Container(
                               width: 200,
-                              height: 30,
+                              height: 20,
                               child: TextField(
                                 cursorColor: Colors.red,
                                 style: TextStyle(
@@ -676,7 +494,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                      ],
                      ),
-                     SizedBox(height: 5,),
+                     SizedBox(height: 10,),
                      Row(children: [
                        Text('Advance fee :',style:TextStyle(
                           color:Colors.blue,
@@ -685,7 +503,7 @@ class _StudentDetailState extends State<StudentDetail> {
                             Flexible(
                             child: Container(
                               width: 200,
-                              height: 30,
+                              height: 20,
                               child: TextField(
                                 cursorColor: Colors.red,
                                 style: TextStyle(
@@ -700,7 +518,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                      ],
                      ),
-                     SizedBox(height: 5,),
+                     SizedBox(height: 8,),
                      Row(children: [
                        Text('Due fee :',style:TextStyle(
                           color:Colors.blue,
@@ -709,7 +527,7 @@ class _StudentDetailState extends State<StudentDetail> {
                             Flexible(
                             child: Container(
                               width: 200,
-                              height: 30,
+                              height: 20,
                               child: TextField(
                                 cursorColor: Colors.red,
                                 style: TextStyle(
@@ -776,31 +594,6 @@ class _StudentDetailState extends State<StudentDetail> {
                       ],)
                     ],),
                     ),
-                    SizedBox(height: 20,),
-                    Text('Important Notes:',style:TextStyle(
-                      color:Colors.blue,
-                      fontSize: 20,
-                    )),
-                    SizedBox(height: 8,),
-                    Container(
-                      width: 300,
-                      height: 300,
-                      //color:Colors.red,
-                      child: TextField(
-                        maxLines:30,
-                        cursorColor: Colors.red,
-                        style: TextStyle(
-                              //fontSize: 50,
-                              fontWeight:FontWeight.bold,
-                              //height: 10,
-                              ),
-                        decoration: InputDecoration(
-                              border: OutlineInputBorder(),
-                              hintText: "N/A",
-                              ),
-
-                      ),
-                    )
 
                 ],
                 ),
