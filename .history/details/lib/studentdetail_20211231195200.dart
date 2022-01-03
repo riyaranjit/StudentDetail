@@ -426,7 +426,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                         ),
                       ],),
-                      SizedBox(height:5),
+                      SizedBox(height:10),
                       Row(children: [
                         Text('Reference From:',style:TextStyle(
                           color:Colors.blue,

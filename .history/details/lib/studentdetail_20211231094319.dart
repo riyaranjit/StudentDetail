@@ -360,29 +360,13 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                         ),
                       ],),
-                      SizedBox(height:5),
+                      SizedBox(height:10),
                       Row(children: [
                         Text('Status:',style:TextStyle(
                           color:Colors.blue,
-                        )),
-                        SizedBox(width: 20,),
-                        Container(
-                                  height: 30,
-                                  width: 300,
-                                  color: Colors.brown[50],
-                                  child: DropdownButtonHideUnderline(
-                                    child: DropdownButton(
-                                        value: cvalue,
-                                        items: category
-                                            .map(buildMenuItem)
-                                            .toList(),
-                                        onChanged: (value) => setState(() {
-                                              this.cvalue = (value as String?);
-                                            })),
-                                  ),
-                                )
+                        ))
                       ],),
-                      SizedBox(height:5),
+                      SizedBox(height:10),
                       Row(children: [
                         Text('Citizenship No:',style:TextStyle(
                           color:Colors.blue,
@@ -426,7 +410,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                         ),
                       ],),
-                      SizedBox(height:5),
+                      SizedBox(height:10),
                       Row(children: [
                         Text('Reference From:',style:TextStyle(
                           color:Colors.blue,

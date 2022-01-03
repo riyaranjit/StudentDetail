@@ -360,12 +360,12 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                         ),
                       ],),
-                      SizedBox(height:5),
+                      SizedBox(height:10),
                       Row(children: [
                         Text('Status:',style:TextStyle(
                           color:Colors.blue,
                         )),
-                        SizedBox(width: 20,),
+                        SizedBox(width: ,),
                         Container(
                                   height: 30,
                                   width: 300,
@@ -382,7 +382,7 @@ class _StudentDetailState extends State<StudentDetail> {
                                   ),
                                 )
                       ],),
-                      SizedBox(height:5),
+                      SizedBox(height:10),
                       Row(children: [
                         Text('Citizenship No:',style:TextStyle(
                           color:Colors.blue,
@@ -426,7 +426,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                         ),
                       ],),
-                      SizedBox(height:5),
+                      SizedBox(height:10),
                       Row(children: [
                         Text('Reference From:',style:TextStyle(
                           color:Colors.blue,

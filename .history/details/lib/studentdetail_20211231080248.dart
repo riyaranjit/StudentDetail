@@ -54,7 +54,7 @@ class _StudentDetailState extends State<StudentDetail> {
         body: SafeArea(child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 5,left: 20 ),
+              padding: const EdgeInsets.only(top: 20,left: 20 ),
               child: Row(children: [
               Text('Student Information'),
               SizedBox(width:20),
@@ -67,7 +67,7 @@ class _StudentDetailState extends State<StudentDetail> {
                 Container(
                   margin:EdgeInsets.only(left: 20),
                   width: 500,
-                  height: 620,
+                  height: 600,
                   decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid,color: Colors.black26)),
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
@@ -346,7 +346,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           Flexible(
                           child: Container(
                             width: 350,
-                            height: 30,
+                            height: 20,
                             child: TextField(
                               cursorColor: Colors.red,
                               style: TextStyle(
@@ -360,29 +360,13 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                         ),
                       ],),
-                      SizedBox(height:5),
+                      SizedBox(height:10),
                       Row(children: [
                         Text('Status:',style:TextStyle(
                           color:Colors.blue,
-                        )),
-                        SizedBox(width: 20,),
-                        Container(
-                                  height: 30,
-                                  width: 300,
-                                  color: Colors.brown[50],
-                                  child: DropdownButtonHideUnderline(
-                                    child: DropdownButton(
-                                        value: cvalue,
-                                        items: category
-                                            .map(buildMenuItem)
-                                            .toList(),
-                                        onChanged: (value) => setState(() {
-                                              this.cvalue = (value as String?);
-                                            })),
-                                  ),
-                                )
+                        ))
                       ],),
-                      SizedBox(height:5),
+                      SizedBox(height:10),
                       Row(children: [
                         Text('Citizenship No:',style:TextStyle(
                           color:Colors.blue,
@@ -426,7 +410,7 @@ class _StudentDetailState extends State<StudentDetail> {
                           ),
                         ),
                       ],),
-                      SizedBox(height:5),
+                      SizedBox(height:0),
                       Row(children: [
                         Text('Reference From:',style:TextStyle(
                           color:Colors.blue,
@@ -456,7 +440,7 @@ class _StudentDetailState extends State<StudentDetail> {
             SizedBox(width: 20),
             Container(
               width: 500,
-              height: 620,
+              height: 600,
                   decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid,color:Colors.black26)),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -591,7 +575,7 @@ class _StudentDetailState extends State<StudentDetail> {
                   Text('04: Amount Information'),
                   Container(
                   width: double.infinity,
-                  height: 220,
+                  height: 210,
                   decoration: BoxDecoration(border: Border.all(style: BorderStyle.solid,color:Colors.black26)),
                   child: Padding(
                     padding: const EdgeInsets.only(left:10),
